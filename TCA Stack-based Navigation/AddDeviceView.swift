@@ -18,11 +18,15 @@ struct AddDeviceFeature: Reducer {
 }
 
 struct AddDeviceView: View {
+    let store: StoreOf<AddDeviceFeature>
+    
     var body: some View {
         Text("Add device")
     }
 }
 
 #Preview {
-    AddDeviceView()
+    AddDeviceView(store: Store(initialState: AddDeviceFeature.State(), reducer: {
+        AddDeviceFeature()
+    }))
 }

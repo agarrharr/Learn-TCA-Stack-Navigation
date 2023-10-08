@@ -50,19 +50,32 @@ struct DevicesView: View {
     let store: StoreOf<DevicesFeature>
     
     var body: some View {
-        WithViewStore(store, observe: { $0 }) { viewStore in
-            VStack {
-                List {
-                    ForEach(viewStore.state.devices) { device in
-                        Text(device.name)
+        NavigationStackStore(
+            self.store.scope(state: \.path, action: { .path($0) })
+        ) {
+            WithViewStore(store, observe: { $0 }) { viewStore in
+                VStack {
+                    List {
+                        ForEach(viewStore.state.devices) { device in
+                            Text(device.name)
+                        }
                     }
+                    Button("Add device") {
+                        print("add device tapped")
+                    }
+                    
                 }
-                Button("Add device") {
-                    print("add device tapped")
-                }
-                
+                .padding()
             }
-            .padding()
+        } destination: { state in
+            switch state {
+            case .addDevice:
+                CaseLet(
+                    /DevicesFeature.Path.State.addDevice,
+                     action: DevicesFeature.Path.Action.addDevice,
+                     then: AddDeviceView.init(store:)
+                )
+            }
         }
     }
 }
