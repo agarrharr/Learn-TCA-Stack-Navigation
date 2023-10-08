@@ -7,11 +7,27 @@ struct Device: Equatable, Identifiable {
 }
 
 struct DevicesFeature: Reducer {
+    struct Path: Reducer {
+        enum State: Equatable {
+            case addDevice(AddDeviceFeature.State)
+        }
+        enum Action: Equatable {
+            case addDevice(AddDeviceFeature.Action)
+        }
+        var body: some ReducerOf<Self> {
+            Scope(state: /State.addDevice, action: /Action.addDevice) {
+                AddDeviceFeature()
+            }
+        }
+    }
+    
     struct State: Equatable {
+        var path = StackState<Path.State>()
         var devices: IdentifiedArrayOf<Device>
     }
     
     enum Action {
+        case path(StackAction<Path.State, Path.Action>)
         case addDeviceAdded
     }
     
@@ -20,7 +36,12 @@ struct DevicesFeature: Reducer {
             switch action {
             case .addDeviceAdded:
                 return .none
+            case .path:
+                return .none
             }
+        }
+        .forEach(\.path, action: /Action.path) {
+            Path()
         }
     }
 }

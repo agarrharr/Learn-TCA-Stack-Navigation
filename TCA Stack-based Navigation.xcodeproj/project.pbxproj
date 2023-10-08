@@ -14,6 +14,7 @@
 		993A0E5A2AD34A4F004F2814 /* TCA_Stack_based_NavigationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993A0E592AD34A4F004F2814 /* TCA_Stack_based_NavigationTests.swift */; };
 		993A0E732AD34CE1004F2814 /* DevicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993A0E722AD34CE1004F2814 /* DevicesView.swift */; };
 		993A0E762AD34D5D004F2814 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 993A0E752AD34D5D004F2814 /* ComposableArchitecture */; };
+		993A0E782AD351A3004F2814 /* AddDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993A0E772AD351A3004F2814 /* AddDeviceView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		993A0E592AD34A4F004F2814 /* TCA_Stack_based_NavigationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCA_Stack_based_NavigationTests.swift; sourceTree = "<group>"; };
 		993A0E5F2AD34A4F004F2814 /* TCA Stack-based NavigationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TCA Stack-based NavigationUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		993A0E722AD34CE1004F2814 /* DevicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesView.swift; sourceTree = "<group>"; };
+		993A0E772AD351A3004F2814 /* AddDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDeviceView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,9 +97,10 @@
 			children = (
 				993A0E482AD34A4E004F2814 /* TCA_Stack_based_NavigationApp.swift */,
 				993A0E4A2AD34A4E004F2814 /* ContentView.swift */,
+				993A0E722AD34CE1004F2814 /* DevicesView.swift */,
 				993A0E4C2AD34A4F004F2814 /* Assets.xcassets */,
 				993A0E4E2AD34A4F004F2814 /* Preview Content */,
-				993A0E722AD34CE1004F2814 /* DevicesView.swift */,
+				993A0E772AD351A3004F2814 /* AddDeviceView.swift */,
 			);
 			path = "TCA Stack-based Navigation";
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 			files = (
 				993A0E732AD34CE1004F2814 /* DevicesView.swift in Sources */,
 				993A0E4B2AD34A4E004F2814 /* ContentView.swift in Sources */,
+				993A0E782AD351A3004F2814 /* AddDeviceView.swift in Sources */,
 				993A0E492AD34A4E004F2814 /* TCA_Stack_based_NavigationApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
