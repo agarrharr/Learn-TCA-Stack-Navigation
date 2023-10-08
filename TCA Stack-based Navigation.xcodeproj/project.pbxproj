@@ -12,6 +12,8 @@
 		993A0E4D2AD34A4F004F2814 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 993A0E4C2AD34A4F004F2814 /* Assets.xcassets */; };
 		993A0E502AD34A4F004F2814 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 993A0E4F2AD34A4F004F2814 /* Preview Assets.xcassets */; };
 		993A0E5A2AD34A4F004F2814 /* TCA_Stack_based_NavigationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993A0E592AD34A4F004F2814 /* TCA_Stack_based_NavigationTests.swift */; };
+		993A0E732AD34CE1004F2814 /* DevicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993A0E722AD34CE1004F2814 /* DevicesView.swift */; };
+		993A0E762AD34D5D004F2814 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 993A0E752AD34D5D004F2814 /* ComposableArchitecture */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,7 @@
 		993A0E552AD34A4F004F2814 /* TCA Stack-based NavigationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TCA Stack-based NavigationTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		993A0E592AD34A4F004F2814 /* TCA_Stack_based_NavigationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCA_Stack_based_NavigationTests.swift; sourceTree = "<group>"; };
 		993A0E5F2AD34A4F004F2814 /* TCA Stack-based NavigationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TCA Stack-based NavigationUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		993A0E722AD34CE1004F2814 /* DevicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				993A0E762AD34D5D004F2814 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +97,7 @@
 				993A0E4A2AD34A4E004F2814 /* ContentView.swift */,
 				993A0E4C2AD34A4F004F2814 /* Assets.xcassets */,
 				993A0E4E2AD34A4F004F2814 /* Preview Content */,
+				993A0E722AD34CE1004F2814 /* DevicesView.swift */,
 			);
 			path = "TCA Stack-based Navigation";
 			sourceTree = "<group>";
@@ -129,6 +134,9 @@
 			dependencies = (
 			);
 			name = "TCA Stack-based Navigation";
+			packageProductDependencies = (
+				993A0E752AD34D5D004F2814 /* ComposableArchitecture */,
+			);
 			productName = "TCA Stack-based Navigation";
 			productReference = 993A0E452AD34A4E004F2814 /* TCA Stack-based Navigation.app */;
 			productType = "com.apple.product-type.application";
@@ -201,6 +209,9 @@
 				Base,
 			);
 			mainGroup = 993A0E3C2AD34A4E004F2814;
+			packageReferences = (
+				993A0E742AD34D5D004F2814 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = 993A0E462AD34A4E004F2814 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -243,6 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				993A0E732AD34CE1004F2814 /* DevicesView.swift in Sources */,
 				993A0E4B2AD34A4E004F2814 /* ContentView.swift in Sources */,
 				993A0E492AD34A4E004F2814 /* TCA_Stack_based_NavigationApp.swift in Sources */,
 			);
@@ -572,6 +584,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		993A0E742AD34D5D004F2814 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		993A0E752AD34D5D004F2814 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 993A0E742AD34D5D004F2814 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 993A0E3D2AD34A4E004F2814 /* Project object */;
 }

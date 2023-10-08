@@ -1,14 +1,11 @@
+import ComposableArchitecture
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        DevicesView(store: Store(initialState: DevicesFeature.State(devices: []), reducer: {
+            DevicesFeature()
+        }))
     }
 }
 
