@@ -1,10 +1,3 @@
-//
-//  TCA_Stack_based_NavigationTests.swift
-//  TCA Stack-based NavigationTests
-//
-//  Created by Adam Garrett-Harris on 10/8/23.
-//
-
 import XCTest
 @testable import TCA_Stack_based_Navigation
 
