@@ -28,13 +28,13 @@ struct DevicesFeature: Reducer {
     
     enum Action {
         case path(StackAction<Path.State, Path.Action>)
-        case addDeviceAdded
+        case addDeviceButtonTapped
     }
     
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
-            case .addDeviceAdded:
+            case .addDeviceButtonTapped:
                 state.path.append(.addDevice(AddDeviceFeature.State()))
                 return .none
             case .path:
@@ -62,7 +62,7 @@ struct DevicesView: View {
                         }
                     }
                     Button("Add device") {
-                        viewStore.send(.addDeviceAdded)
+                        viewStore.send(.addDeviceButtonTapped)
                     }
                     
                 }
