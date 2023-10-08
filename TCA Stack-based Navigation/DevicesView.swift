@@ -35,6 +35,7 @@ struct DevicesFeature: Reducer {
         Reduce { state, action in
             switch action {
             case .addDeviceAdded:
+                state.path.append(.addDevice(AddDeviceFeature.State()))
                 return .none
             case .path:
                 return .none
@@ -61,7 +62,7 @@ struct DevicesView: View {
                         }
                     }
                     Button("Add device") {
-                        print("add device tapped")
+                        viewStore.send(.addDeviceAdded)
                     }
                     
                 }
