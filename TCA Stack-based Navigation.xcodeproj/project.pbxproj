@@ -12,8 +12,6 @@
 		993A0E4D2AD34A4F004F2814 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 993A0E4C2AD34A4F004F2814 /* Assets.xcassets */; };
 		993A0E502AD34A4F004F2814 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 993A0E4F2AD34A4F004F2814 /* Preview Assets.xcassets */; };
 		993A0E5A2AD34A4F004F2814 /* TCA_Stack_based_NavigationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993A0E592AD34A4F004F2814 /* TCA_Stack_based_NavigationTests.swift */; };
-		993A0E642AD34A4F004F2814 /* TCA_Stack_based_NavigationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993A0E632AD34A4F004F2814 /* TCA_Stack_based_NavigationUITests.swift */; };
-		993A0E662AD34A4F004F2814 /* TCA_Stack_based_NavigationUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993A0E652AD34A4F004F2814 /* TCA_Stack_based_NavigationUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,8 +40,6 @@
 		993A0E552AD34A4F004F2814 /* TCA Stack-based NavigationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TCA Stack-based NavigationTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		993A0E592AD34A4F004F2814 /* TCA_Stack_based_NavigationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCA_Stack_based_NavigationTests.swift; sourceTree = "<group>"; };
 		993A0E5F2AD34A4F004F2814 /* TCA Stack-based NavigationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TCA Stack-based NavigationUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		993A0E632AD34A4F004F2814 /* TCA_Stack_based_NavigationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCA_Stack_based_NavigationUITests.swift; sourceTree = "<group>"; };
-		993A0E652AD34A4F004F2814 /* TCA_Stack_based_NavigationUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCA_Stack_based_NavigationUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +72,6 @@
 			children = (
 				993A0E472AD34A4E004F2814 /* TCA Stack-based Navigation */,
 				993A0E582AD34A4F004F2814 /* TCA Stack-based NavigationTests */,
-				993A0E622AD34A4F004F2814 /* TCA Stack-based NavigationUITests */,
 				993A0E462AD34A4E004F2814 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -116,15 +111,6 @@
 				993A0E592AD34A4F004F2814 /* TCA_Stack_based_NavigationTests.swift */,
 			);
 			path = "TCA Stack-based NavigationTests";
-			sourceTree = "<group>";
-		};
-		993A0E622AD34A4F004F2814 /* TCA Stack-based NavigationUITests */ = {
-			isa = PBXGroup;
-			children = (
-				993A0E632AD34A4F004F2814 /* TCA_Stack_based_NavigationUITests.swift */,
-				993A0E652AD34A4F004F2814 /* TCA_Stack_based_NavigationUITestsLaunchTests.swift */,
-			);
-			path = "TCA Stack-based NavigationUITests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,8 +260,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				993A0E662AD34A4F004F2814 /* TCA_Stack_based_NavigationUITestsLaunchTests.swift in Sources */,
-				993A0E642AD34A4F004F2814 /* TCA_Stack_based_NavigationUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
