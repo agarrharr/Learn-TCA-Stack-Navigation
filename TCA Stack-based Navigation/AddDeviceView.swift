@@ -7,7 +7,7 @@ struct AddDeviceFeature: Reducer {
     }
     
     enum Action: Equatable {
-        
+        case letsGoButtonTapped
     }
     
     var body: some ReducerOf<Self> {
@@ -21,7 +21,14 @@ struct AddDeviceView: View {
     let store: StoreOf<AddDeviceFeature>
     
     var body: some View {
-        Text("Add device")
+        VStack {
+            Text("Hey kid!")
+            Text("Let's get you set up with a new device!")
+            Spacer()
+            Button("Let's go!") {
+                store.send(.letsGoButtonTapped)
+            }
+        }
     }
 }
 
