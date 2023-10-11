@@ -26,7 +26,6 @@ struct OnboardDeviceTypeFeature: Reducer {
     }
     
     @Dependency(\.mainQueue) var mainQueue
-    @Dependency(\.date.now) var now
     @Dependency(\.uuid) var uuid
     
     var body: some ReducerOf<Self> {
@@ -36,15 +35,15 @@ struct OnboardDeviceTypeFeature: Reducer {
                 switch action {
                 case .didAppear:
                     return .run { [deviceType = state.deviceType] send in
-                        try await mainQueue.sleep(for: 1.0)
+                        try await self.mainQueue.sleep(for: 1.0)
                         await send(.internal(.foundDevices([
                             FoundDevice(
-                                id: uuid(),
+                                id: self.uuid(),
                                 type: deviceType,
                                 signalStrength: 1.0
                             ),
                             FoundDevice(
-                                id: uuid(),
+                                id: self.uuid(),
                                 type: deviceType,
                                 signalStrength: 0.7
                             ),
