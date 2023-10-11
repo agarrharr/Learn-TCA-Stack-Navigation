@@ -13,7 +13,6 @@
 		993A0E502AD34A4F004F2814 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 993A0E4F2AD34A4F004F2814 /* Preview Assets.xcassets */; };
 		993A0E5A2AD34A4F004F2814 /* TCA_Stack_based_NavigationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993A0E592AD34A4F004F2814 /* TCA_Stack_based_NavigationTests.swift */; };
 		993A0E732AD34CE1004F2814 /* DevicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993A0E722AD34CE1004F2814 /* DevicesView.swift */; };
-		993A0E762AD34D5D004F2814 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 993A0E752AD34D5D004F2814 /* ComposableArchitecture */; };
 		993A0E782AD351A3004F2814 /* AddDeviceIntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993A0E772AD351A3004F2814 /* AddDeviceIntroView.swift */; };
 		99E4275A2AD64B3200905852 /* ChooseDeviceTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E427592AD64B3200905852 /* ChooseDeviceTypeView.swift */; };
 		99E4275C2AD64C5500905852 /* ChooseDeviceTypeFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E4275B2AD64C5500905852 /* ChooseDeviceTypeFeature.swift */; };
@@ -22,6 +21,8 @@
 		99E427622AD64D9000905852 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E427612AD64D9000905852 /* Device.swift */; };
 		99E427642AD6515100905852 /* OnboardDeviceTypeFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E427632AD6515100905852 /* OnboardDeviceTypeFeature.swift */; };
 		99E427662AD6515B00905852 /* OnboardDeviceTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E427652AD6515B00905852 /* OnboardDeviceTypeView.swift */; };
+		99E4276E2AD65E0C00905852 /* NavigationStackBackport in Frameworks */ = {isa = PBXBuildFile; productRef = 99E4276D2AD65E0C00905852 /* NavigationStackBackport */; };
+		99E427732AD660F100905852 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 99E427722AD660F100905852 /* ComposableArchitecture */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,7 +67,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				993A0E762AD34D5D004F2814 /* ComposableArchitecture in Frameworks */,
+				99E427732AD660F100905852 /* ComposableArchitecture in Frameworks */,
+				99E4276E2AD65E0C00905852 /* NavigationStackBackport in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,7 +177,8 @@
 			);
 			name = "TCA Stack-based Navigation";
 			packageProductDependencies = (
-				993A0E752AD34D5D004F2814 /* ComposableArchitecture */,
+				99E4276D2AD65E0C00905852 /* NavigationStackBackport */,
+				99E427722AD660F100905852 /* ComposableArchitecture */,
 			);
 			productName = "TCA Stack-based Navigation";
 			productReference = 993A0E452AD34A4E004F2814 /* TCA Stack-based Navigation.app */;
@@ -250,7 +253,8 @@
 			);
 			mainGroup = 993A0E3C2AD34A4E004F2814;
 			packageReferences = (
-				993A0E742AD34D5D004F2814 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				99E4276C2AD65E0C00905852 /* XCRemoteSwiftPackageReference "navigation-stack-backport" */,
+				99E427712AD660F100905852 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 			);
 			productRefGroup = 993A0E462AD34A4E004F2814 /* Products */;
 			projectDirPath = "";
@@ -391,7 +395,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -448,7 +452,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -634,20 +638,33 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		993A0E742AD34D5D004F2814 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+		99E4276C2AD65E0C00905852 /* XCRemoteSwiftPackageReference "navigation-stack-backport" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture.git";
+			repositoryURL = "https://github.com/lm/navigation-stack-backport";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.2.0;
+				minimumVersion = 1.0.0;
+			};
+		};
+		99E427712AD660F100905852 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alex293/swift-composable-architecture";
+			requirement = {
+				branch = "navigation-backport";
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		993A0E752AD34D5D004F2814 /* ComposableArchitecture */ = {
+		99E4276D2AD65E0C00905852 /* NavigationStackBackport */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 993A0E742AD34D5D004F2814 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			package = 99E4276C2AD65E0C00905852 /* XCRemoteSwiftPackageReference "navigation-stack-backport" */;
+			productName = NavigationStackBackport;
+		};
+		99E427722AD660F100905852 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99E427712AD660F100905852 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
 		};
 /* End XCSwiftPackageProductDependency section */

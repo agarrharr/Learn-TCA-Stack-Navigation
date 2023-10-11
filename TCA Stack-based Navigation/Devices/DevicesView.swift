@@ -5,7 +5,7 @@ struct DevicesView: View {
     let store: StoreOf<DevicesFeature>
     
     var body: some View {
-        NavigationStackStore(
+        NavigationStackStoreBP(
             self.store.scope(state: \.path, action: { .path($0) })
         ) {
             WithViewStore(store, observe: { $0 }) { viewStore in
