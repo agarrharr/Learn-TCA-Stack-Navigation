@@ -7,7 +7,11 @@ struct OnboardDeviceTypeView: View {
     var body: some View {
         WithViewStore(store, observe: { $0 }) { viewStore in
             if viewStore.state.devices.isEmpty {
-                Text("Searching for \(viewStore.state.deviceType.description) devices nearby...")
+                VStack {
+                    Text("Searching for \(viewStore.state.deviceType.description) devices nearby...")
+                    ProgressView()
+                    Spacer()
+                }
             } else {
                 List {
                     ForEach(viewStore.state.devices) { device in
