@@ -14,7 +14,14 @@
 		993A0E5A2AD34A4F004F2814 /* TCA_Stack_based_NavigationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993A0E592AD34A4F004F2814 /* TCA_Stack_based_NavigationTests.swift */; };
 		993A0E732AD34CE1004F2814 /* DevicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993A0E722AD34CE1004F2814 /* DevicesView.swift */; };
 		993A0E762AD34D5D004F2814 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 993A0E752AD34D5D004F2814 /* ComposableArchitecture */; };
-		993A0E782AD351A3004F2814 /* AddDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993A0E772AD351A3004F2814 /* AddDeviceView.swift */; };
+		993A0E782AD351A3004F2814 /* AddDeviceIntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993A0E772AD351A3004F2814 /* AddDeviceIntroView.swift */; };
+		99E4275A2AD64B3200905852 /* ChooseDeviceTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E427592AD64B3200905852 /* ChooseDeviceTypeView.swift */; };
+		99E4275C2AD64C5500905852 /* ChooseDeviceTypeFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E4275B2AD64C5500905852 /* ChooseDeviceTypeFeature.swift */; };
+		99E4275E2AD64C7F00905852 /* AddDeviceIntroFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E4275D2AD64C7F00905852 /* AddDeviceIntroFeature.swift */; };
+		99E427602AD64D7000905852 /* DevicesFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E4275F2AD64D7000905852 /* DevicesFeature.swift */; };
+		99E427622AD64D9000905852 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E427612AD64D9000905852 /* Device.swift */; };
+		99E427642AD6515100905852 /* OnboardDeviceTypeFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E427632AD6515100905852 /* OnboardDeviceTypeFeature.swift */; };
+		99E427662AD6515B00905852 /* OnboardDeviceTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E427652AD6515B00905852 /* OnboardDeviceTypeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +51,14 @@
 		993A0E592AD34A4F004F2814 /* TCA_Stack_based_NavigationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCA_Stack_based_NavigationTests.swift; sourceTree = "<group>"; };
 		993A0E5F2AD34A4F004F2814 /* TCA Stack-based NavigationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TCA Stack-based NavigationUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		993A0E722AD34CE1004F2814 /* DevicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesView.swift; sourceTree = "<group>"; };
-		993A0E772AD351A3004F2814 /* AddDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDeviceView.swift; sourceTree = "<group>"; };
+		993A0E772AD351A3004F2814 /* AddDeviceIntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDeviceIntroView.swift; sourceTree = "<group>"; };
+		99E427592AD64B3200905852 /* ChooseDeviceTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDeviceTypeView.swift; sourceTree = "<group>"; };
+		99E4275B2AD64C5500905852 /* ChooseDeviceTypeFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDeviceTypeFeature.swift; sourceTree = "<group>"; };
+		99E4275D2AD64C7F00905852 /* AddDeviceIntroFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDeviceIntroFeature.swift; sourceTree = "<group>"; };
+		99E4275F2AD64D7000905852 /* DevicesFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesFeature.swift; sourceTree = "<group>"; };
+		99E427612AD64D9000905852 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		99E427632AD6515100905852 /* OnboardDeviceTypeFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardDeviceTypeFeature.swift; sourceTree = "<group>"; };
+		99E427652AD6515B00905852 /* OnboardDeviceTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardDeviceTypeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,12 +109,11 @@
 		993A0E472AD34A4E004F2814 /* TCA Stack-based Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				993A0E482AD34A4E004F2814 /* TCA_Stack_based_NavigationApp.swift */,
+				99E427582AD64A6D00905852 /* Devices */,
 				993A0E4A2AD34A4E004F2814 /* ContentView.swift */,
-				993A0E722AD34CE1004F2814 /* DevicesView.swift */,
+				993A0E482AD34A4E004F2814 /* TCA_Stack_based_NavigationApp.swift */,
 				993A0E4C2AD34A4F004F2814 /* Assets.xcassets */,
 				993A0E4E2AD34A4F004F2814 /* Preview Content */,
-				993A0E772AD351A3004F2814 /* AddDeviceView.swift */,
 			);
 			path = "TCA Stack-based Navigation";
 			sourceTree = "<group>";
@@ -119,6 +132,30 @@
 				993A0E592AD34A4F004F2814 /* TCA_Stack_based_NavigationTests.swift */,
 			);
 			path = "TCA Stack-based NavigationTests";
+			sourceTree = "<group>";
+		};
+		99E427572AD64A5A00905852 /* AddDevice */ = {
+			isa = PBXGroup;
+			children = (
+				993A0E772AD351A3004F2814 /* AddDeviceIntroView.swift */,
+				99E4275D2AD64C7F00905852 /* AddDeviceIntroFeature.swift */,
+				99E427592AD64B3200905852 /* ChooseDeviceTypeView.swift */,
+				99E4275B2AD64C5500905852 /* ChooseDeviceTypeFeature.swift */,
+				99E427632AD6515100905852 /* OnboardDeviceTypeFeature.swift */,
+				99E427652AD6515B00905852 /* OnboardDeviceTypeView.swift */,
+			);
+			path = AddDevice;
+			sourceTree = "<group>";
+		};
+		99E427582AD64A6D00905852 /* Devices */ = {
+			isa = PBXGroup;
+			children = (
+				993A0E722AD34CE1004F2814 /* DevicesView.swift */,
+				99E4275F2AD64D7000905852 /* DevicesFeature.swift */,
+				99E427612AD64D9000905852 /* Device.swift */,
+				99E427572AD64A5A00905852 /* AddDevice */,
+			);
+			path = Devices;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +296,15 @@
 			files = (
 				993A0E732AD34CE1004F2814 /* DevicesView.swift in Sources */,
 				993A0E4B2AD34A4E004F2814 /* ContentView.swift in Sources */,
-				993A0E782AD351A3004F2814 /* AddDeviceView.swift in Sources */,
+				99E427642AD6515100905852 /* OnboardDeviceTypeFeature.swift in Sources */,
+				993A0E782AD351A3004F2814 /* AddDeviceIntroView.swift in Sources */,
+				99E427622AD64D9000905852 /* Device.swift in Sources */,
+				99E427662AD6515B00905852 /* OnboardDeviceTypeView.swift in Sources */,
+				99E4275E2AD64C7F00905852 /* AddDeviceIntroFeature.swift in Sources */,
+				99E4275A2AD64B3200905852 /* ChooseDeviceTypeView.swift in Sources */,
 				993A0E492AD34A4E004F2814 /* TCA_Stack_based_NavigationApp.swift in Sources */,
+				99E427602AD64D7000905852 /* DevicesFeature.swift in Sources */,
+				99E4275C2AD64C5500905852 /* ChooseDeviceTypeFeature.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
