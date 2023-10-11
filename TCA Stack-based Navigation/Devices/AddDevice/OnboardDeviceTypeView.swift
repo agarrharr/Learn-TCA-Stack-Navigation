@@ -6,7 +6,22 @@ struct OnboardDeviceTypeView: View {
     
     var body: some View {
         WithViewStore(store, observe: { $0 }) { viewStore in
-            Text("Onboard \(viewStore.state.deviceType.description)")
+            if viewStore.state.devices.isEmpty {
+                Text("Searching for \(viewStore.state.deviceType.description) devices nearby...")
+            } else {
+                List {
+                    ForEach(viewStore.state.devices) { device in
+                        HStack {
+                            Text(device.id.uuidString)
+                            Spacer()
+                            Text(device.signalStrength.description)
+                        }
+                    }
+                }
+            }
+        }
+        .onAppear {
+            store.send(.view(.didAppear))
         }
     }
 }

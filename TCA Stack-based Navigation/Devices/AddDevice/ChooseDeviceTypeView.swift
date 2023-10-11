@@ -7,13 +7,13 @@ struct ChooseDeviceTypeView: View {
     var body: some View {
         List {
             Button("V1 device") {
-                print("v1")
+                store.send(.deviceTypeTapped(.v1))
             }
             Button("V2 device") {
-                print("v2")
+                store.send(.deviceTypeTapped(.v2))
             }
             Button("Pro device") {
-                print("Pro")
+                store.send(.deviceTypeTapped(.pro))
             }
         }
     }
