@@ -27,6 +27,7 @@ struct OnboardDeviceTypeView: View {
         .onAppear {
             store.send(.view(.didAppear))
         }
+        .navigationTitle("Searching")
     }
 }
 

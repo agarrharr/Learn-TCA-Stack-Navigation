@@ -21,6 +21,7 @@ struct DevicesView: View {
                     
                 }
                 .padding()
+                .navigationTitle("Devices")
             }
         } destination: { state in
             switch state {

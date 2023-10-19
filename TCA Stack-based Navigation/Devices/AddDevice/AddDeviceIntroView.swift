@@ -13,6 +13,7 @@ struct AddDeviceIntroView: View {
                 store.send(.letsGoButtonTapped)
             }
         }
+        .navigationTitle("Intro")
     }
 }
 

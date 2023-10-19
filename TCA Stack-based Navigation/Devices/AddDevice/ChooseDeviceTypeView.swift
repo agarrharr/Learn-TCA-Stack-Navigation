@@ -16,6 +16,7 @@ struct ChooseDeviceTypeView: View {
                 store.send(.deviceTypeTapped(.pro))
             }
         }
+        .navigationTitle("Device Type")
     }
 }
 
