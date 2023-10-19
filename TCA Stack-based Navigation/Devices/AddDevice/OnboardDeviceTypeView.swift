@@ -13,13 +13,18 @@ struct OnboardDeviceTypeView: View {
                     Spacer()
                 }
             } else {
-                List {
-                    ForEach(viewStore.state.devices) { device in
-                        HStack {
-                            Text(device.id.uuidString)
-                            Spacer()
-                            Text(device.signalStrength.description)
+                VStack {
+                    List {
+                        ForEach(viewStore.state.devices) { device in
+                            HStack {
+                                Text(device.id.uuidString)
+                                Spacer()
+                                Text(device.signalStrength.description)
+                            }
                         }
+                    }
+                    Button("Exit") {
+                        store.send(.view(.exitButtonTapped))
                     }
                 }
             }

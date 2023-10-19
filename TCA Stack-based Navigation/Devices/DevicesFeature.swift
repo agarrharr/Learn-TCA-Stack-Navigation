@@ -49,6 +49,13 @@ struct DevicesFeature: Reducer {
             case let .path(.element(id: _, action: .chooseDeviceType(.deviceTypeTapped(deviceType)))):
                 state.path.append(.onboardDeviceType(OnboardDeviceTypeFeature.State(deviceType: deviceType)))
                 return .none
+                
+            case let .path(.element(id: _, action: .onboardDeviceType(.delegate(action)))):
+                switch action {
+                case .onExit:
+                    state.path.removeAll()
+                    return .none
+                }
 
             case .path:
                 return .none

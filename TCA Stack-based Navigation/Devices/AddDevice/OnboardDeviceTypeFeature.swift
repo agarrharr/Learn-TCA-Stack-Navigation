@@ -16,12 +16,17 @@ struct OnboardDeviceTypeFeature: Reducer {
     enum Action: Equatable {
         case view(ViewAction)
         case `internal`(InternalAction)
+        case delegate(DelegateAction)
         
         enum ViewAction: Equatable {
             case didAppear
+            case exitButtonTapped
         }
         enum InternalAction: Equatable {
             case foundDevices(IdentifiedArrayOf<FoundDevice>)
+        }
+        enum DelegateAction: Equatable {
+            case onExit
         }
     }
     
@@ -49,6 +54,9 @@ struct OnboardDeviceTypeFeature: Reducer {
                             ),
                         ])))
                     }
+                    
+                case .exitButtonTapped:
+                    return .send(.delegate(.onExit))
                 }
 
             case let .internal(action):
@@ -57,6 +65,9 @@ struct OnboardDeviceTypeFeature: Reducer {
                     state.devices = devices
                     return .none
                 }
+                
+            case .delegate:
+                return .none
             }
         }
     }
