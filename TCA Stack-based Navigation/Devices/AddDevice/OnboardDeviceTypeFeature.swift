@@ -1,16 +1,26 @@
 import ComposableArchitecture
 import Foundation
 
-struct OnboardDeviceTypeFeature: Reducer {
+@Reducer
+struct OnboardDeviceTypeFeature {
     struct FoundDevice: Equatable, Identifiable {
         let id: UUID
         let type: DeviceType
         let signalStrength: Double
     }
     
+    @ObservableState
     struct State: Equatable {
         var deviceType: DeviceType
-        var devices: IdentifiedArrayOf<FoundDevice> = []
+        var devices: IdentifiedArrayOf<FoundDevice>
+
+        init(
+            deviceType: DeviceType,
+            devices: IdentifiedArrayOf<FoundDevice> = []
+        ) {
+            self.deviceType = deviceType
+            self.devices = devices
+        }
     }
     
     enum Action: Equatable {

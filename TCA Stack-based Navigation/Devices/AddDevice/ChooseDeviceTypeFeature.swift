@@ -1,6 +1,8 @@
 import ComposableArchitecture
 
-struct ChooseDeviceTypeFeature: Reducer {
+@Reducer
+struct ChooseDeviceTypeFeature {
+    @ObservableState
     struct State: Equatable { }
     
     enum Action: Equatable {

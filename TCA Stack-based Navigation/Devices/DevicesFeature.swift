@@ -1,7 +1,10 @@
 import ComposableArchitecture
 
-struct DevicesFeature: Reducer {
-    struct Path: Reducer {
+@Reducer
+struct DevicesFeature {
+    @Reducer
+    struct Path {
+        @ObservableState
         enum State: Equatable {
             case addDeviceIntro(AddDeviceIntroFeature.State)
             case chooseDeviceType(ChooseDeviceTypeFeature.State)
@@ -13,21 +16,30 @@ struct DevicesFeature: Reducer {
             case onboardDeviceType(OnboardDeviceTypeFeature.Action)
         }
         var body: some ReducerOf<Self> {
-            Scope(state: /State.addDeviceIntro, action: /Action.addDeviceIntro) {
+            Scope(state: \.addDeviceIntro, action: \.addDeviceIntro) {
                 AddDeviceIntroFeature()
             }
-            Scope(state: /State.chooseDeviceType, action: /Action.chooseDeviceType) {
+            Scope(state: \.chooseDeviceType, action: \.chooseDeviceType) {
                 ChooseDeviceTypeFeature()
             }
-            Scope(state: /State.onboardDeviceType, action: /Action.onboardDeviceType) {
+            Scope(state: \.onboardDeviceType, action: \.onboardDeviceType) {
                 OnboardDeviceTypeFeature()
             }
         }
     }
     
+    @ObservableState
     struct State: Equatable {
         var path = StackState<Path.State>()
         var devices: IdentifiedArrayOf<Device>
+
+        init(
+            path: StackState<Path.State> = StackState<Path.State>(),
+            devices: IdentifiedArrayOf<Device>
+        ) {
+            self.path = path
+            self.devices = devices
+        }
     }
     
     enum Action {
@@ -61,7 +73,7 @@ struct DevicesFeature: Reducer {
                 return .none
             }
         }
-        .forEach(\.path, action: /Action.path) {
+        .forEach(\.path, action: \.path) {
             Path()
         }
     }

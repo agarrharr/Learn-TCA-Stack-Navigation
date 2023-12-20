@@ -1,9 +1,9 @@
 import ComposableArchitecture
 
-struct AddDeviceIntroFeature: Reducer {
-    struct State: Equatable {
-        
-    }
+@Reducer
+struct AddDeviceIntroFeature {
+    @ObservableState
+    struct State: Equatable {}
     
     enum Action: Equatable {
         case letsGoButtonTapped

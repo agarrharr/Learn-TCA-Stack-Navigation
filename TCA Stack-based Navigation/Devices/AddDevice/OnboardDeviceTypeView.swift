@@ -5,17 +5,17 @@ struct OnboardDeviceTypeView: View {
     let store: StoreOf<OnboardDeviceTypeFeature>
     
     var body: some View {
-        WithViewStore(store, observe: { $0 }) { viewStore in
-            if viewStore.state.devices.isEmpty {
+        WithPerceptionTracking {
+            if self.store.state.devices.isEmpty {
                 VStack {
-                    Text("Searching for \(viewStore.state.deviceType.description) devices nearby...")
+                    Text("Searching for \(self.store.state.deviceType.description) devices nearby...")
                     ProgressView()
                     Spacer()
                 }
             } else {
                 VStack {
                     List {
-                        ForEach(viewStore.state.devices) { device in
+                        ForEach(self.store.state.devices) { device in
                             HStack {
                                 Text(device.id.uuidString)
                                 Spacer()

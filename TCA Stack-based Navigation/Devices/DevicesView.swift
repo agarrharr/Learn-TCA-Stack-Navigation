@@ -2,48 +2,41 @@ import ComposableArchitecture
 import SwiftUI
 
 struct DevicesView: View {
-    let store: StoreOf<DevicesFeature>
-    
+    @BindableStore var store: StoreOf<DevicesFeature>
+
     var body: some View {
-        NavigationStackStoreBP(
-            self.store.scope(state: \.path, action: { .path($0) })
+        NavigationStack(
+            path: $store.scope(state: \.path, action: \.path)
         ) {
-            WithViewStore(store, observe: { $0 }) { viewStore in
-                VStack {
-                    List {
-                        ForEach(viewStore.state.devices) { device in
-                            Text(device.name)
-                        }
+            VStack {
+                List {
+                    ForEach(self.store.state.devices) { device in
+                        Text(device.name)
                     }
-                    Button("Add device") {
-                        viewStore.send(.addDeviceButtonTapped)
-                    }
-                    
                 }
-                .padding()
-                .navigationTitle("Devices")
+                Button("Add device") {
+                    self.store.send(.addDeviceButtonTapped)
+                }
+
             }
-        } destination: { state in
-            switch state {
+            .padding()
+            .navigationTitle("Devices")
+        } destination: { store in
+            switch store.state {
             case .chooseDeviceType:
-                CaseLet(
-                    /DevicesFeature.Path.State.chooseDeviceType,
-                     action: DevicesFeature.Path.Action.chooseDeviceType,
-                     then: ChooseDeviceTypeView.init(store:)
-                )
+                if let store = store.scope(state: \.chooseDeviceType, action: \.chooseDeviceType) {
+                     ChooseDeviceTypeView(store: store)
+                }
 
             case .addDeviceIntro:
-                CaseLet(
-                    /DevicesFeature.Path.State.addDeviceIntro,
-                     action: DevicesFeature.Path.Action.addDeviceIntro,
-                     then: AddDeviceIntroView.init(store:)
-                )
+                if let store = store.scope(state: \.addDeviceIntro, action: \.addDeviceIntro) {
+                    AddDeviceIntroView(store: store)
+                }
+
             case .onboardDeviceType(_):
-                CaseLet(
-                    /DevicesFeature.Path.State.onboardDeviceType,
-                     action: DevicesFeature.Path.Action.onboardDeviceType,
-                     then: OnboardDeviceTypeView.init(store:)
-                )
+                if let store = store.scope(state: \.onboardDeviceType, action: \.onboardDeviceType) {
+                    OnboardDeviceTypeView(store: store)
+                }
             }
         }
     }
